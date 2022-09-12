@@ -23,8 +23,16 @@ jobs:
           #localstack wait -t 30
           brew install localstack
           pip install awscli-local
+          brew install hyperkit
+          brew install minikube
           brew install docker
-          open -g -a /Applications/Docker.app || exit
+          brew install docker-compose
+          # Start minikube
+          minikube start
+          # Tell Docker CLI to talk to minikube's VM
+          eval $(minikube docker-env)
+          # Save IP to a hostname
+          echo "`minikube ip` docker.local" | sudo tee -a /etc/hosts > /dev/null
           docker pull localstack/localstack
           localstack start -d
           localstack wait -t 30
