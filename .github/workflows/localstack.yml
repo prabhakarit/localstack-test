@@ -23,6 +23,7 @@ jobs:
           #localstack wait -t 30
           brew install localstack
           pip install awscli-local
+          brew install docker
           docker pull localstack/localstack
           localstack start -d
           localstack wait -t 30
