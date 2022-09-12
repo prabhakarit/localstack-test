@@ -24,6 +24,7 @@ jobs:
           brew install localstack
           pip install awscli-local
           brew install docker
+          open -g -a Docker.app || exit
           docker pull localstack/localstack
           localstack start -d
           localstack wait -t 30
