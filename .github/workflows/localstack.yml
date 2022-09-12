@@ -5,10 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Start LocalStack
-        # env:
-        #  LOCALSTACK_API_KEY: ${{ secrets.LOCALSTACK_API_KEY }}
+        env:
+          LOCALSTACK_API_KEY: 3KxvpMbLld
         run: |
-          pip install -U prefect
           # install LocalStack cli and awslocal
           pip install localstack awscli-local[ver1]
           # Make sure to pull the latest version of the image
