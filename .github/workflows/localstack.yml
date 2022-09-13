@@ -60,14 +60,14 @@ jobs:
         uses: hashicorp/setup-terraform@v1
         with:
           terraform_version: 1.2.5
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-region: us-east-1
-          # for actuals read from secrets
-          aws-access-key-id: dummy
-          aws-secret-access-key: dummy
-          audience: localhost:4566
+#       - name: Configure AWS Credentials
+#         uses: aws-actions/configure-aws-credentials@v1
+#         with:
+#           aws-region: us-east-1
+#           # for actuals read from secrets
+#           aws-access-key-id: dummy
+#           aws-secret-access-key: dummy
+#           audience: localhost:4566
       - name: Plan and apply changes
         run: |
           terraform plan -input=false -no-color  
