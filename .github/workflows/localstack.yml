@@ -70,6 +70,7 @@ jobs:
 #           audience: localhost:4566
       - name: Plan and apply changes
         run: |
+          terraform init
           terraform plan -input=false -no-color  
           terraform apply
       - name: Validate terraform apply
