@@ -10,31 +10,15 @@ jobs:
           LOCALSTACK_API_KEY: 3KxvpMbLld
         run: |
           # install LocalStack cli and awslocal
-          #pip install localstack awscli-local[ver1]
-          #echo "PPB :: awscli installed"
+          pip install localstack awscli-local[ver1]
+          echo "PPB :: awscli installed"
           # Make sure to pull the latest version of the image
-          #docker pull localstack/localstack
-          #echo "PPB :: docker localstack image pull complete"
-          # Start LocalStack in the background
-          #localstack start -d
-          #echo "PPB :: localstack after start"
-          # Wait 30 seconds for the LocalStack container to become ready before timing out
-          #echo "Waiting for LocalStack startup..."
-          #localstack wait -t 30
-          brew install localstack
-          pip install awscli-local
-          brew install hyperkit
-          brew install minikube
-          brew install docker
-          brew install docker-compose
-          # Start minikube
-          minikube start
-          # Tell Docker CLI to talk to minikube's VM
-          eval $(minikube docker-env)
-          # Save IP to a hostname
-          echo "`minikube ip` docker.local" | sudo tee -a /etc/hosts > /dev/null
           docker pull localstack/localstack
-          localstack start -d
+          echo "PPB :: docker localstack image pull complete"
+          # Start LocalStack in the background
+          docker run --rm -it -p 4566:4566 -p 4510-4559:4510-4559 localstack/localstack
+          echo "PPB :: localstack after start"
+          # Wait 30 seconds for the LocalStack container to become ready before timing out
           localstack wait -t 30
           echo "Startup complete"          
       - name: Run some Tests against LocalStack
