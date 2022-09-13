@@ -22,6 +22,7 @@ jobs:
       steps:
       - name: Setup AWS-CLI-local
         env:
+          # for actuals read from secrets
           LOCALSTACK_API_KEY: 3KxvpMbLld
         run: |
           # Upgrading python to 3.9
@@ -59,3 +60,28 @@ jobs:
         uses: hashicorp/setup-terraform@v1
         with:
           terraform_version: 1.2.5
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-region: us-east-1
+          # for actuals read from secrets
+          aws-access-key-id: dummy
+          aws-secret-access-key: dummy
+      - name: Plan and apply changes
+        run: |
+          terraform plan -input=false -no-color  
+          terraform apply
+      - name: Validate terraform apply
+        run: |
+          echo "Testing Terraform changes"
+          echo "List buckets"
+          awslocal s3 ls
+          echo "Test upload"
+          touch testFile.txt
+          echo "hello world from Prabhakar" >> testFile.txt
+          awslocal s3 cp testFile.txt s3://my-bucket
+          echo "View objects on S3"
+          awslocal s3api list-objects --bucket my-bucket
+          echo "Download and view content of object"
+          awslocal s3api get-object --bucket my-bucket --key testFile.txt output.txt
+          cat output.txt
