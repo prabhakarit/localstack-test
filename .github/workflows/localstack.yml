@@ -1,31 +1,27 @@
 name: localstack-action-example
 on: push
 jobs:
-  example-job:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Start LocalStack
-        env:
-          LOCALSTACK_API_KEY: 3KxvpMbLld
-        run: |
-          # Upgrading python to 3.9
-          sudo apt install python3.9
-          sudo apt install python3-pip
-          # install LocalStack cli and awslocal
-          pip3 install localstack awscli-local[ver1]
-          echo "PPB :: awscli installed"
-          # Make sure to pull the latest version of the image
-          docker pull localstack/localstack
-          echo "PPB :: docker localstack image pull complete"
-          # Start LocalStack in the background
-          #docker run -d --rm -p 4566:4566 -p 4510-4559:4510-4559 localstack/localstack
-          localstack start -d
-          echo "PPB :: localstack after start"
-          # Wait 30 seconds for the LocalStack container to become ready before timing out
-          localstack wait -t 30
-          echo "Startup complete"          
+  build:
+      runs-on: ubuntu-latest
+      services:
+        aws_local:
+          image: localstack/localstack
+          ports:
+            - "4566:4566"
+          env:
+            SERVICES: "sqs,s3"
+            DEFAULT_REGION: us-east-1
+            FORCE_NONINTERACTIVE: 1
+            AWS_ACCESS_KEY_ID: dummy
+            AWS_SECRET_ACCESS_KEY: dummy
+          options: >-
+            --health-cmd "awslocal s3 mb s3://uploads"
+            --health-interval 10s 
+            --health-timeout 5s 
+            --health-retries 5
+      steps:
       - name: Run some Tests against LocalStack
         run: |
           awslocal s3 mb s3://test-bucket
           awslocal s3 ls
-          echo "Test Execution complete!"   
+          echo "Test Execution complete!" 
