@@ -42,7 +42,7 @@ jobs:
           awslocal s3 ls
           echo "Test upload"
           touch testFile.txt
-          echo "hello world from Prabhakar" >> testFile.txt
+          echo "hello world from Prabhakar using CLI" >> testFile.txt
           awslocal s3 cp testFile.txt s3://test-bucket-by-prabhakar
           echo "View objects on S3"
           awslocal s3api list-objects --bucket test-bucket-by-prabhakar
@@ -80,7 +80,7 @@ jobs:
           awslocal s3 ls
           echo "Test upload"
           touch testFile.txt
-          echo "hello world from Prabhakar" >> testFile.txt
+          echo "hello world from Prabhakar using Terraform" >> testFile.txt
           awslocal s3 cp testFile.txt s3://my-bucket
           echo "View objects on S3"
           awslocal s3api list-objects --bucket my-bucket
