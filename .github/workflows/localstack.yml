@@ -67,6 +67,7 @@ jobs:
           # for actuals read from secrets
           aws-access-key-id: dummy
           aws-secret-access-key: dummy
+          audience: localhost:4566
       - name: Plan and apply changes
         run: |
           terraform plan -input=false -no-color  
