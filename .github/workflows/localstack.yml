@@ -46,10 +46,10 @@ jobs:
           echo "View objects on S3"
           awslocal s3api list-objects --bucket test-bucket-by-prabhakar
           echo "Download and view content of object"
-          aws s3api get-object --bucket test-bucket-by-prabhakar --key testFile.txt output.txt
+          awslocal s3api get-object --bucket test-bucket-by-prabhakar --key testFile.txt output.txt
           cat output.txt
           echo "delete object in bucket"
-          aws s3api delete-object --bucket test-bucket-by-prabhakar --key testFile.txt
+          awslocal s3api delete-object --bucket test-bucket-by-prabhakar --key testFile.txt
           echo "delete bucket"
-          aws s3api delete-bucket --bucket test-bucket-by-prabhakar
+          awslocal s3api delete-bucket --bucket test-bucket-by-prabhakar
           echo "Test Execution complete!" 
