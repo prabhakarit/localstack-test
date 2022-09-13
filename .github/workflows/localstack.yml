@@ -72,7 +72,7 @@ jobs:
         run: |
           terraform init
           terraform plan -input=false -no-color  
-          terraform apply
+          terraform apply -auto-approve
       - name: Validate terraform apply
         run: |
           echo "Testing Terraform changes"
