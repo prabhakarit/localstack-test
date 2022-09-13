@@ -18,7 +18,8 @@ jobs:
           docker pull localstack/localstack
           echo "PPB :: docker localstack image pull complete"
           # Start LocalStack in the background
-          docker run -d --rm -p 4566:4566 -p 4510-4559:4510-4559 localstack/localstack
+          #docker run -d --rm -p 4566:4566 -p 4510-4559:4510-4559 localstack/localstack
+          localstack start -d
           echo "PPB :: localstack after start"
           # Wait 30 seconds for the LocalStack container to become ready before timing out
           localstack wait -t 30
