@@ -71,6 +71,7 @@ jobs:
       - name: Plan and apply changes
         run: |
           terraform init
+          terraform validate
           terraform plan -input=false -no-color  
           terraform apply -auto-approve
       - name: Validate terraform apply
@@ -87,3 +88,8 @@ jobs:
           echo "Download and view content of object"
           awslocal s3api get-object --bucket my-bucket --key testFile.txt output.txt
           cat output.txt
+          echo "delete object in bucket"
+          awslocal s3api delete-object --bucket my-bucket --key testFile.txt
+      - name: Terraform destroy resource
+        run: |
+          terraform destroy -auto-approve
