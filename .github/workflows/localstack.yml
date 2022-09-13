@@ -29,7 +29,7 @@ jobs:
           sudo apt install python3-pip
           # Upgrade all packages
           # pip3 list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 pip3 install -U 
-          pip install --ignore-installed pyOpenSSL=22.0.0
+          pip install --ignore-installed pyOpenSSL==22.0.0
           # install LocalStack cli and awslocal
           # pip3 install cryptography=36.0.2
           pip3 install localstack awscli-local
