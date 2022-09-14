@@ -5,7 +5,7 @@ jobs:
       runs-on: ubuntu-latest
       steps:
       - name: Setup AWS-CLI-local
-        env:
+        #env:
           # for actuals read from secrets
           # LOCALSTACK_API_KEY: 3KxvpMbLld
         run: |
