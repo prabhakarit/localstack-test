@@ -66,17 +66,11 @@ jobs:
       - name: Terraform-local installation
         run: |
           pip3 install terraform-local
-#       - name: Configure AWS Credentials
-#         uses: aws-actions/configure-aws-credentials@v1
-#         with:
-#           audience: localhost:4566
-#           aws-region: us-east-1
-#           # for actuals read from secrets
-#           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-#           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           role-to-assume: arn:aws:iam::162348680824:role/Githubactions-workflow-role
           role-duration-seconds: 900 # the ttl of the session, in seconds.
           aws-region: ap-south-1 # use your region here.
