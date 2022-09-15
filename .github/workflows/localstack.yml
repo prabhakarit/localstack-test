@@ -82,9 +82,9 @@ jobs:
           tflocal validate
           tflocal plan -input=false -no-color  
           tflocal apply -auto-approve
-      - name: Terraform destroy resource
-        run: |
-          tflocal destroy -auto-approve
+#       - name: Terraform destroy resource
+#        run: |
+#          tflocal destroy -auto-approve
       - name: ACTUAL Terraform Plan and apply changes
         run: |
           export TF_CLI_ARGS_plan="-compact-warnings"
@@ -93,6 +93,6 @@ jobs:
           terraform validate
           terraform plan -input=false -no-color  
           terraform apply -auto-approve
-      - name: ACTUAL Terraform destroy resource
-        run: |
-          terraform destroy -auto-approve
+#       - name: ACTUAL Terraform destroy resource
+#         run: |
+#           terraform destroy -auto-approve
