@@ -69,11 +69,11 @@ jobs:
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          #aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          #aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           role-to-assume: arn:aws:iam::162348680824:role/Githubactions-workflow-role
           role-duration-seconds: 900 # the ttl of the session, in seconds.
-          aws-region: ap-south-1 # use your region here.
+          aws-region: ${{ secrets.AWS_REGION }} # use your region here.
       - name: Terraform-local Plan and apply changes
         run: |
           export TF_CLI_ARGS_plan="-compact-warnings"
