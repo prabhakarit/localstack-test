@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "test-bucket" {
-  bucket = "my-bucket"
+  bucket = "very-random-ppb-bucket-1"
 }
 
 resource "aws_iam_role" "invocation_role" {
@@ -12,7 +12,7 @@ resource "aws_iam_role" "invocation_role" {
   "Statement": {
     "Effect": "Allow",
     "Action": "s3:ListBucket",
-    "Resource": "arn:aws:s3:::test-bucket"
+    "Resource": "arn:aws:s3:::very-random-ppb-bucket-1"
   }
 }
 EOF
