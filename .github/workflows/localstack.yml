@@ -1,3 +1,6 @@
+permissions:
+  id-token: write # required to use OIDC authentication
+  contents: read # required to checkout the code from the repo
 name: localstack-action-example
 on: push
 jobs:
