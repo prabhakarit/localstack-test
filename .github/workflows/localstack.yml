@@ -71,7 +71,7 @@ jobs:
 #           # for actuals read from secrets
 #           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
 #           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      - name: Plan and apply changes
+      - name: Terraform-local Plan and apply changes
         run: |
           export TF_CLI_ARGS_plan="-compact-warnings"
           export TF_CLI_ARGS_apply="-compact-warnings"
@@ -79,22 +79,17 @@ jobs:
           tflocal validate
           tflocal plan -input=false -no-color  
           tflocal apply -auto-approve
-      - name: Validate terraform apply
-        run: |
-          echo "Testing Terraform changes"
-          echo "List buckets"
-          awslocal s3 ls
-          echo "Test upload"
-          touch testFile.txt
-          echo "hello world from Prabhakar using Terraform" >> testFile.txt
-          awslocal s3 cp testFile.txt s3://my-bucket
-          echo "View objects on S3"
-          awslocal s3api list-objects --bucket my-bucket
-          echo "Download and view content of object"
-          awslocal s3api get-object --bucket my-bucket --key testFile.txt output.txt
-          cat output.txt
-          echo "delete object in bucket"
-          awslocal s3api delete-object --bucket my-bucket --key testFile.txt
       - name: Terraform destroy resource
         run: |
           tflocal destroy -auto-approve
+      - name: ACTUAL Terraform Plan and apply changes
+        run: |
+          export TF_CLI_ARGS_plan="-compact-warnings"
+          export TF_CLI_ARGS_apply="-compact-warnings"
+          terraform init
+          terraform validate
+          terraform plan -input=false -no-color  
+          terraform apply -auto-approve
+      - name: ACTUAL Terraform destroy resource
+        run: |
+          terraform destroy -auto-approve
