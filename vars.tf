@@ -5,7 +5,7 @@
 variable "environment" {
   type        = string
   description = "environment"
-  default = "dev"
+  default = "test"
 }
 
 # AWS AZ
