@@ -110,7 +110,7 @@ resource "aws_route_table_association" "private" {
 }
 
 # Default Security Group of VPC
-resource "aws_security_group" "test" {
+resource "aws_security_group" "${var.environment}-test-sg" {
   name        = "${var.environment}-test-sg"
   description = "${var.environment} Test SG to allow traffic from the VPC"
   vpc_id      = aws_vpc.vpc.id
