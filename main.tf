@@ -110,29 +110,28 @@ resource "aws_route_table_association" "private" {
 }
 
 # Default Security Group of VPC
-resource "aws_security_group" "default" {
-  name        = "${var.environment}-default-sg"
-  description = "${var.environment} Default SG to allow traffic from the VPC"
+resource "aws_security_group" "test" {
+  name        = "${var.environment}-test-sg"
+  description = "${var.environment} Test SG to allow traffic from the VPC"
   vpc_id      = aws_vpc.vpc.id
-  depends_on = [
-   aws_vpc.vpc
-  ]
 
-    ingress {
+  ingress {
     from_port = 0
     to_port   = 0
     protocol  = -1
-    self      = true
   }
 
   egress {
     from_port = 0
     to_port   = 0
     protocol  = -1
-    self      = true
   }
 
   tags = {
     Environment = "${var.environment}"
+  }
+  
+  lifecycle {
+    create_before_destroy = true
   }
 }
