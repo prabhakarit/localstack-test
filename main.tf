@@ -1,10 +1,5 @@
 terraform {
-  backend "s3" {
-    bucket         = "ppb-aws-tf-state-store"
-    key            = "terraform.tfstate"
-    region         = "ap-south-1"
-    dynamodb_table = "ppb-aws-tf-state-lock"
-  }
+  backend "s3" {}
 }
 
 # S3
