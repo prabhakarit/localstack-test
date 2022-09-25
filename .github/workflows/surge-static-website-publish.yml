@@ -1,0 +1,32 @@
+name: Publish to surge.sh
+on: push
+jobs:
+  build:
+  # You may pin to the exact commit or the version.
+  # uses: dswistowski/surge-sh-action@c09463ed5222f67391260fa806240d4e464743d0
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+      - uses: actions/checkout@v2
+      - name: setup node
+        uses: actions/setup-node@master
+        with:
+          node-version: 14
+      # install applicaion dependencies
+      - name: Install and setup surge
+        run: |
+          npm install --global surge
+      - name: Publish to surge.sh
+        # uses: dswistowski/surge-sh-action@c09463ed5222f67391260fa806240d4e464743d0
+        uses: dswistowski/surge-sh-action@v1.0.1
+        with:
+          # your surge.sh domain to deploy
+          domain: furti.surge.sh
+          # surge.sh login
+          login: prabhakar.borah@gmail.com
+          # surge.sh token, generate it with `surge token` command
+          token: 59447c8c57e8e6c7364a40f24171b6b3
+          # your project path
+          project: ./public
