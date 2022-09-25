@@ -9,17 +9,12 @@ jobs:
       - uses: actions/checkout@v2
       - name: Publish to surge.sh
         uses: dswistowski/surge-sh-action@v1
-        env:
-          DOMAIN: ${{ secrets.SURGE_DOMAIN }}
-          LOGIN: ${{ secrets.SURGE_USER }}
-          TOKEN: ${{ secrets.SURGE_TOKEN }}
-          PROJECT: ${{ secrets.SURGE_PROJECT_PATH }}
         with:
           # your surge.sh domain to deploy
-          domain: "$DOMAIN"
+          domain: ${{ secrets.SURGE_DOMAIN }}
           # surge.sh login
-          login: "$LOGIN"
+          login: ${{ secrets.SURGE_USER }}
           # surge.sh token, generate it with `surge token` command
-          token: "$TOKEN"
+          token: ${{ secrets.SURGE_TOKEN }}
           # your project path
-          project: "$PROJECT"
+          project: ${{ secrets.SURGE_PROJECT_PATH }}
