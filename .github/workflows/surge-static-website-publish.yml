@@ -13,7 +13,7 @@ jobs:
       - name: setup node
         uses: actions/setup-node@master
         with:
-          node-version: 14
+          node-version: {{ matrix.node_version }}
       # install applicaion dependencies
       - name: Install and setup surge
         run: |
