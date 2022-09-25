@@ -1,0 +1,370 @@
+{
+  "outletDAO": [
+    {
+      "distance": "1.85",
+      "hjid": "161",
+      "instance": "sales,service",
+      "outletaddress": {
+        "outletcity": "Berlin",
+        "outletstreet1": "Prinzessinnenstraße 21 - 24",
+        "outletstreet2": "",
+        "outletzipcode": "10969"
+      },
+      "outletcode": "21204",
+      "outletcommuchannel": {
+        "outletemail": "info.berlin@mercedes-benz.com",
+        "outletfax": "+49 30 3901 2828",
+        "outlethomepage": "http://www.mercedes-benz-berlin.de",
+        "outletphone": "+49 30 3901 00"
+      },
+      "outletgeographicinformation": {
+        "latitude": "52.502161",
+        "longitude": "13.413316"
+      },
+      "outletid": "GS0000745",
+      "outletname1": "Daimler AG",
+      "outletname2": "Niederlassung Berlin",
+      "outletname3": "Niederlassung Berlin",
+      "outletprogram": {
+        "sales": [
+          "Passenger_Car"
+        ],
+        "service": [
+          "Passenger_Car",
+          "Van"
+        ],
+        "used_vehicles_trade": [
+          "Passenger_Car"
+        ]
+      },
+      "statusdefcode": "branch"
+    },
+    {
+      "distance": "4.68",
+      "hjid": "102",
+      "instance": "sales,service",
+      "outletaddress": {
+        "outletcity": "Berlin",
+        "outletstreet1": "Salzufer 1",
+        "outletstreet2": "",
+        "outletzipcode": "10587"
+      },
+      "outletcode": "21200",
+      "outletcommuchannel": {
+        "outletemail": "info.berlin@mercedes-benz.com",
+        "outletfax": "+49 30 3901 1457",
+        "outlethomepage": "http://www.mercedes-benz-berlin.de",
+        "outletphone": "+49 30 3901 00"
+      },
+      "outletgeographicinformation": {
+        "latitude": "52.514352",
+        "longitude": "13.330972"
+      },
+      "outletid": "GS0001114",
+      "outletname1": "Daimler AG",
+      "outletname2": "Niederlassung Berlin",
+      "outletname3": "Niederlassung Berlin",
+      "outletprogram": {
+        "sales": [
+          "Passenger_Car",
+          "Van"
+        ],
+        "service": [
+          "Passenger_Car",
+          "Van"
+        ],
+        "used_vehicles_trade": [
+          "Passenger_Car"
+        ]
+      },
+      "statusdefcode": "branch"
+    },
+    {
+      "distance": "7.48",
+      "hjid": "3494",
+      "instance": "sales,service",
+      "outletaddress": {
+        "outletcity": "Berlin",
+        "outletstreet1": "Ollenhauerstraße 116 - 117",
+        "outletstreet2": "",
+        "outletzipcode": "13403"
+      },
+      "outletcode": "01203",
+      "outletcommuchannel": {
+        "outletemail": "info@heinzhammer.de",
+        "outletfax": "+49 30 41000139",
+        "outlethomepage": "http://www.hammer.mercedes-benz.de",
+        "outletphone": "+49 30 4100010"
+      },
+      "outletgeographicinformation": {
+        "latitude": "52.568366",
+        "longitude": "13.329441"
+      },
+      "outletid": "GS0000051",
+      "outletname1": "Heinz Hammer Vertragswerkstatt GmbH",
+      "outletname2": "Autorisierter Mercedes-Benz Service und Vermittlung",
+      "outletname3": "",
+      "outletprogram": {
+        "service": [
+          "Passenger_Car",
+          "Van"
+        ],
+        "used_vehicles_trade": [
+          "Passenger_Car",
+          "Truck",
+          "Van"
+        ]
+      },
+      "statusdefcode": "Agent"
+    },
+    {
+      "distance": "7.48",
+      "hjid": "3239",
+      "instance": "sales,service",
+      "outletaddress": {
+        "outletcity": "Berlin",
+        "outletstreet1": "Ollenhauerstraße 116 - 117",
+        "outletstreet2": "",
+        "outletzipcode": "13403"
+      },
+      "outletcode": "A1203",
+      "outletcommuchannel": {
+        "outletemail": "info.berlin@mercedes-benz.com",
+        "outletfax": "+49 30 410001 39",
+        "outlethomepage": "http://www.mercedes-benz-berlin.de",
+        "outletphone": "+49 30 410001 0"
+      },
+      "outletgeographicinformation": {
+        "latitude": "52.568366",
+        "longitude": "13.329441"
+      },
+      "outletid": "GS0014128",
+      "outletname1": "Daimler AG",
+      "outletname2": "Niederlassung Berlin",
+      "outletname3": "Showroom bei Heinz Hammer GmbH",
+      "outletprogram": {
+        "sales": [
+          "Passenger_Car"
+        ]
+      },
+      "statusdefcode": "branch"
+    },
+    {
+      "distance": "7.71",
+      "hjid": "5434",
+      "instance": "sales,service",
+      "outletaddress": {
+        "outletcity": "Berlin",
+        "outletstreet1": "Blankenburger Straße 85 - 105",
+        "outletstreet2": "",
+        "outletzipcode": "13156"
+      },
+      "outletcode": "A1238",
+      "outletcommuchannel": {
+        "outletemail": "info.berlin@mercedes-benz.com",
+        "outletfax": "+49 30 3901 1457",
+        "outlethomepage": "http://www.mercedes-benz-berlin.de",
+        "outletphone": "+49 30 3901 00"
+      },
+      "outletgeographicinformation": {
+        "latitude": "52.584897",
+        "longitude": "13.419808"
+      },
+      "outletid": "GS0017147",
+      "outletname1": "Daimler AG",
+      "outletname2": "Niederlassung Berlin",
+      "outletname3": "Showroom bei K.I.B. Autoservice GmbH",
+      "outletprogram": {
+        "sales": [
+          "Passenger_Car"
+        ],
+        "used_vehicles_trade": [
+          "Passenger_Car"
+        ]
+      },
+      "statusdefcode": "branch"
+    },
+    {
+      "distance": "7.71",
+      "hjid": "640",
+      "instance": "sales,service",
+      "outletaddress": {
+        "outletcity": "Berlin",
+        "outletstreet1": "Blankenburger Straße 85 - 105",
+        "outletstreet2": "",
+        "outletzipcode": "13156"
+      },
+      "outletcode": "01238",
+      "outletcommuchannel": {
+        "outletemail": "service@kib-berlin.de",
+        "outletfax": "+49 30 47601 223",
+        "outlethomepage": "http://www.kib.mercedes-benz.de",
+        "outletphone": "+49 30 47601 220"
+      },
+      "outletgeographicinformation": {
+        "latitude": "52.584897",
+        "longitude": "13.419808"
+      },
+      "outletid": "GS0000059",
+      "outletname1": "K.I.B. Autoservice GmbH",
+      "outletname2": "Autorisierter Mercedes-Benz Service und Vermittlung",
+      "outletname3": "",
+      "outletprogram": {
+        "service": [
+          "Passenger_Car",
+          "Truck",
+          "Van"
+        ]
+      },
+      "statusdefcode": "Agent"
+    },
+    {
+      "distance": "8.0",
+      "hjid": "3985",
+      "instance": "sales,service",
+      "outletaddress": {
+        "outletcity": "Berlin",
+        "outletstreet1": "Körnerstraße 50 - 51",
+        "outletstreet2": "",
+        "outletzipcode": "12169"
+      },
+      "outletcode": "01202",
+      "outletcommuchannel": {
+        "outletemail": "info@saparautzki.com",
+        "outletfax": "+49 30 701711 88",
+        "outlethomepage": "http://www.saparautzki.mercedes-benz.de",
+        "outletphone": "+49 30 701711 0"
+      },
+      "outletgeographicinformation": {
+        "latitude": "52.4591",
+        "longitude": "13.329444"
+      },
+      "outletid": "GS0000050",
+      "outletname1": "Autohaus Max Saparautzki GmbH & Co. KG",
+      "outletname2": "Autorisierter Mercedes-Benz Service und Vermittlung",
+      "outletname3": "",
+      "outletprogram": {
+        "service": [
+          "Passenger_Car",
+          "Van"
+        ]
+      },
+      "statusdefcode": "Agent"
+    },
+    {
+      "distance": "8.0",
+      "hjid": "3238",
+      "instance": "sales,service",
+      "outletaddress": {
+        "outletcity": "Berlin",
+        "outletstreet1": "Körnerstraße 50 - 51",
+        "outletstreet2": "",
+        "outletzipcode": "12169"
+      },
+      "outletcode": "A1202",
+      "outletcommuchannel": {
+        "outletemail": "info.berlin@mercedes-benz.com",
+        "outletfax": "+49 30 791 2488",
+        "outlethomepage": "http://www.mercedes-benz-berlin.de",
+        "outletphone": "+49 30 791 5041"
+      },
+      "outletgeographicinformation": {
+        "latitude": "52.4591",
+        "longitude": "13.329444"
+      },
+      "outletid": "GS0014127",
+      "outletname1": "Daimler AG",
+      "outletname2": "Niederlassung Berlin",
+      "outletname3": "Showroom bei AH Max Saparautzki GmbH & Co. KG",
+      "outletprogram": {
+        "sales": [
+          "Passenger_Car"
+        ],
+        "used_vehicles_trade": [
+          "Passenger_Car"
+        ]
+      },
+      "statusdefcode": "branch"
+    },
+    {
+      "distance": "8.21",
+      "hjid": "159",
+      "instance": "sales,service",
+      "outletaddress": {
+        "outletcity": "Berlin",
+        "outletstreet1": "Rhinstraße 100 - 120",
+        "outletstreet2": "",
+        "outletzipcode": "12681"
+      },
+      "outletcode": "21208",
+      "outletcommuchannel": {
+        "outletemail": "info.berlin@mercedes-benz.com",
+        "outletfax": "+49 30 3901 4205",
+        "outlethomepage": "http://www.mercedes-benz-berlin.de",
+        "outletphone": "+49 30 3901 00"
+      },
+      "outletgeographicinformation": {
+        "latitude": "52.52925",
+        "longitude": "13.51945"
+      },
+      "outletid": "GS0000747",
+      "outletname1": "Daimler AG",
+      "outletname2": "vertreten durch Mercedes-Benz Vertriebs GmbH, Niederlassung Berlin",
+      "outletname3": "Niederlassung Berlin",
+      "outletprogram": {
+        "sales": [
+          "Passenger_Car",
+          "Van"
+        ],
+        "service": [
+          "Passenger_Car",
+          "Van"
+        ],
+        "used_vehicles_trade": [
+          "Passenger_Car"
+        ]
+      },
+      "statusdefcode": "branch"
+    },
+    {
+      "distance": "9.74",
+      "hjid": "160",
+      "instance": "sales,service",
+      "outletaddress": {
+        "outletcity": "Berlin",
+        "outletstreet1": "Holzhauser Straße 11",
+        "outletstreet2": "",
+        "outletzipcode": "13509"
+      },
+      "outletcode": "21205",
+      "outletcommuchannel": {
+        "outletemail": "info.berlin@mercedes-benz.com",
+        "outletfax": "+49 30 3901 1108",
+        "outlethomepage": "http://www.mercedes-benz-berlin.de",
+        "outletphone": "+49 30 3901 00"
+      },
+      "outletgeographicinformation": {
+        "latitude": "52.577638",
+        "longitude": "13.296697"
+      },
+      "outletid": "GS0000746",
+      "outletname1": "Daimler AG",
+      "outletname2": "Niederlassung Berlin",
+      "outletname3": "Niederlassung Berlin",
+      "outletprogram": {
+        "sales": [
+          "Passenger_Car",
+          "Van"
+        ],
+        "service": [
+          "Passenger_Car",
+          "Van"
+        ],
+        "used_vehicles_trade": [
+          "Passenger_Car"
+        ]
+      },
+      "statusdefcode": "branch"
+    }
+  ]
+}

@@ -17,4 +17,4 @@ jobs:
           # surge.sh token, generate it with `surge token` command
           token: '59447c8c57e8e6c7364a40f24171b6b3'
           # your project path
-          project: './public'
+          project: './mb-versicherung'

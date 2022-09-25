@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="25px" height="18px" viewBox="0 0 25 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.2 (15857) - http://www.bohemiancoding.com/sketch -->
+    <title>ICON - Email</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Website" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="mb_versicherung_disc_desktop" sketch:type="MSArtboardGroup" transform="translate(-671.000000, -3507.000000)" fill="#FFFFFF">
+            <g id="Kontakt-Service-Copy" sketch:type="MSLayerGroup" transform="translate(128.000000, 3253.000000)">
+                <g id="ServiceCenter" transform="translate(121.000000, 50.000000)" sketch:type="MSShapeGroup">
+                    <g id="ServiceCenter-Copy" transform="translate(2.000000, 204.000000)">
+                        <g id="email" transform="translate(420.000000, 0.000000)">
+                            <path d="M0.335786918,1.33226763e-15 L24.6642131,1.33226763e-15 L12.3740325,7.92760662 L0.335786918,1.33226763e-15 L0.335786918,1.33226763e-15 L0.335786918,1.33226763e-15 Z M25,17.3235696 L0,17.3235696 L0,3.48156018 L12.3740325,11.7028381 L24.9996206,3.43944453 L24.9996206,17.3235696 L25,17.3235696 L25,17.3235696 Z" id="ICON---Email"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
