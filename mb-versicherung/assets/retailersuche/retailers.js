@@ -1,4 +1,6 @@
-var gkey = "AIzaSyBWs5Ef_-EUfRFEhJPxwryNq_pcwCsmu-A";
+var gkey = "AIzaSyCs6iBtNMPVeuzKtuVAk_LUYNOEzqX_-7E";
+//var gkey = "AIzaSyBhZ5KMz5500-H3bT9xAlv2lkR0fAcFCc0";
+
 
 PXLPRK = PXLPRK || {};
 
@@ -63,41 +65,46 @@ PXLPRK.Retailer = {
                     retailers.initLatlngbounds();
                     retailers.showSpinner(true);
 
-                    var plzstring = "gssndata.php?zipcode=" + plz;
+                  //  var plzstring = "gssndata.php?zipcode=" + plz;
                     // TEST
-                    //var plzstring = "../assets/retailersuche/plz_suche.json";
+                    var plzstring = "../assets/retailersuche/plz_suche.json";
 
                     $.get(plzstring)
                         .done(function (data) {
-                            console.log(data, "nu1");
+                          console.log(data, "nu1");
 
-                            var obj1 = data.cities[0];
-                            var long = obj1['lng'];
-                            var lat = obj1['lat'];
+                                var obj1 = data.cities[0];
+                                var long = obj1['lng'];
+                                var lat = obj1['lat'];
 
-                            var callstring = "gssndata.php?";
-                            callstring += "lon=" + long + "&lat=" + lat;
+                       //   var callstring = "gssndata.php?";
+                   //   var callstring = "lon=" + long + "&lat=" + lat;
 
                             // TEST
-                            //callstring = "../assets/retailersuche/umkreissuche.json";
+                 var   callstring = "../assets/retailersuche/umkreissuche.json";
 
 
                             $.get(callstring, function (data) {
-
+                                console.log(data,"check");
                                 // Aufruf der Methoden mit den Erhaltenen Daten.
                                 retailers.showSpinner(false);
                                 retailers.initMap();
-                                //retailers.initMap();      // init twice fixes broken map rendering.
+                                retailers.initMap();      // init twice fixes broken map rendering
+                                retailers.initMap();  
+                                retailers.initMap(); 
+                                retailers.initMap(); 
                                 var retailersarr = data['outletDAO'];
                                 $.each(retailersarr, function (i) {
                                     retailers.createRetailerMarker(retailersarr[i], i);
                                 });
                             }).fail(function (data) {
+                             //   console.log(data,"test");
                                 retailers.showSpinner(false);
                                 retailers.showNoSuchPLZ("Anfrage konnte nicht bearbeitet werden");
                             });
                         })
                         .fail(function (data) {
+                       //     console.log(data,"test");
                             retailers.showSpinner(false);
                             retailers.showNoSuchPLZ("Anfrage konnte nicht bearbeitet werden");
                         });
@@ -154,7 +161,7 @@ PXLPRK.Retailer = {
             },
 
             initLatlngbounds: function () {
-                //console.log(window.google);
+                console.log(window.google);
                 retailers.latlngbounds = new window.google.maps.LatLngBounds;
             },
 
@@ -182,8 +189,8 @@ PXLPRK.Retailer = {
                 retailers.latlngbounds.extend(position);
 
 
-                var marker = new PXLPRK.RichMarker({
-                    //var marker = new google.maps.Marker({
+           //var marker = new PXLPRK.RichMarker({
+               var marker = new google.maps.Marker({
                     map: retailers.map,
                     position: position,
                     draggable: false,
