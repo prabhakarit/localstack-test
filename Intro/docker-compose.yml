@@ -1,0 +1,34 @@
+version: "3.8"
+
+services:
+  ############# AWS ################
+  localstack:
+    container_name: "${LOCALSTACK_DOCKER_NAME-localstack_main}"
+    image: localstack/localstack
+    ports:
+      - "127.0.0.1:4510-4559:4510-4559" # external service port range
+      - "127.0.0.1:4566:4566" # LocalStack Edge Proxy
+      #- "${PORT_WEB_UI-4566}:${PORT_WEB_UI-8080}"
+    environment:
+      #- DEBUG=0
+      - DEBUG=${DEBUG- }
+      #- DATA_DIR=/data/localstack
+      - DATA_DIR=${DATA_DIR- }
+      - HOST_TMP_FOLDER=/tmp/localstack
+      - DOCKER_HOST=unix:///var/run/docker.sock
+      #- SERVICES=${SERVICES-lambda,apigateway,s3} # Services you wanna use
+      #- SERVICES=${SERVICES- }
+      - SERVICES=lambda,dynamodb,cloudformation,s3,sts,iam,apigateway,ecr
+      #- LAMBDA_EXECUTOR=${LAMBDA_EXECUTOR-docker-reuse }
+      #- LAMBDA_EXECUTOR=${LAMBDA_EXECUTOR- }
+      - LAMBDA_EXECUTOR=local
+      - LAMBDA_REMOTE_DOCKER=0
+      - AWS_ACCESS_KEY_ID=dummy
+      - AWS_SECRET_ACCESS_KEY=dummy
+      - HOSTNAME_EXTERNAL=localstack
+      - PORT_WEB_UI=${PORT_WEB_UI- }
+    volumes:
+      - "${TMPDIR:-/tmp}/localstack:/tmp/localstack" # Folder where will be saved the files (like s3 files)
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - ./localstack:/docker-entrypoint-initaws.d:ro # Folder where you'll put the starter scripts
+      - '/Users/prabhakarborah/Documents/projects/localstack/go-lambda-localstack'
