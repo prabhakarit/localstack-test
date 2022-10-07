@@ -69,7 +69,7 @@ jobs:
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          role-to-assume: arn:aws:iam::162348680824:role/Githubactions-workflow-role
+          role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
           role-duration-seconds: 900 # the ttl of the session, in seconds.
           aws-region: ${{ secrets.AWS_REGION }}
       - name: Terraform-local Plan and apply changes
