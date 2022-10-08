@@ -23,40 +23,40 @@ jobs:
             --health-timeout 5s 
             --health-retries 5
       steps:
-      - name: Setup AWS-CLI-local
-        env:
-          # for actuals read from secrets
-          LOCALSTACK_API_KEY: 3KxvpMbLld
-        run: |
-          # Upgrading python to 3.9
-          sudo apt install python3.9
-          sudo apt install python3-pip
-          # Fix for pyOpenSSL error, fixing version for compatibility
-          pip install --ignore-installed pyOpenSSL==22.0.0
-          # install LocalStack cli and awslocal
-          pip3 install localstack awscli-local
-          echo "PPB :: awscli installed"
-      - name: Run some Tests against LocalStack
-        run: |
-          echo "Testing S3"
-          echo "Create test bucket"
-          awslocal s3 mb s3://test-bucket-by-prabhakar
-          echo "List buckets"
-          awslocal s3 ls
-          echo "Test upload"
-          touch testFile.txt
-          echo "hello world from Prabhakar using CLI" >> testFile.txt
-          awslocal s3 cp testFile.txt s3://test-bucket-by-prabhakar
-          echo "View objects on S3"
-          awslocal s3api list-objects --bucket test-bucket-by-prabhakar
-          echo "Download and view content of object"
-          awslocal s3api get-object --bucket test-bucket-by-prabhakar --key testFile.txt output.txt
-          cat output.txt
-          echo "delete object in bucket"
-          awslocal s3api delete-object --bucket test-bucket-by-prabhakar --key testFile.txt
-          echo "delete bucket"
-          awslocal s3api delete-bucket --bucket test-bucket-by-prabhakar
-          echo "Test Execution complete!" 
+      # - name: Setup AWS-CLI-local
+      #   env:
+      #     # for actuals read from secrets
+      #     LOCALSTACK_API_KEY: 3KxvpMbLld
+      #   run: |
+      #     # Upgrading python to 3.9
+      #     sudo apt install python3.9
+      #     sudo apt install python3-pip
+      #     # Fix for pyOpenSSL error, fixing version for compatibility
+      #     pip install --ignore-installed pyOpenSSL==22.0.0
+      #     # install LocalStack cli and awslocal
+      #     pip3 install localstack awscli-local
+      #     echo "PPB :: awscli installed"
+      # - name: Run some Tests against LocalStack
+      #   run: |
+      #     echo "Testing S3"
+      #     echo "Create test bucket"
+      #     awslocal s3 mb s3://test-bucket-by-prabhakar
+      #     echo "List buckets"
+      #     awslocal s3 ls
+      #     echo "Test upload"
+      #     touch testFile.txt
+      #     echo "hello world from Prabhakar using CLI" >> testFile.txt
+      #     awslocal s3 cp testFile.txt s3://test-bucket-by-prabhakar
+      #     echo "View objects on S3"
+      #     awslocal s3api list-objects --bucket test-bucket-by-prabhakar
+      #     echo "Download and view content of object"
+      #     awslocal s3api get-object --bucket test-bucket-by-prabhakar --key testFile.txt output.txt
+      #     cat output.txt
+      #     echo "delete object in bucket"
+      #     awslocal s3api delete-object --bucket test-bucket-by-prabhakar --key testFile.txt
+      #     echo "delete bucket"
+      #     awslocal s3api delete-bucket --bucket test-bucket-by-prabhakar
+      #     echo "Test Execution complete!" 
       - name: Checkout codebase
         uses: actions/checkout@v3
       - name: Setup Terraform
@@ -80,9 +80,6 @@ jobs:
           tflocal validate
           tflocal plan -input=false -no-color  
           tflocal apply -auto-approve
-#       - name: Terraform destroy resource
-#        run: |
-#          tflocal destroy -auto-approve
       - name: ACTUAL Terraform Plan and apply changes
         run: |
           export TF_CLI_ARGS_plan="-compact-warnings"
@@ -91,6 +88,3 @@ jobs:
           terraform validate
           terraform plan -input=false -no-color  
           terraform apply -auto-approve
-#       - name: ACTUAL Terraform destroy resource
-#         run: |
-#           terraform destroy -auto-approve
